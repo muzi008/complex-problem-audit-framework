@@ -1,13 +1,13 @@
 # 复杂问题回答框架 v3.0.1 Final：自适应认知架构完整版
 ## SPEC × CORE × CONDITIONAL ADAPTIVE × PLUGINS × TOOLS × EVALS
 
-> **公开发布映射**：本文件作为 CPAF v1.0.0 的唯一中文权威规范发布。CPAF 是 GitHub 项目的公开版本号，v3.0.1 Final 是框架内部规范版本号。
+> **公开发布映射**：本文件作为 CPAF v1.0.1 的唯一中文权威规范发布。CPAF 是 GitHub 项目的公开版本号，v3.0.1 Final 是框架内部规范版本号。
 >
 > **单一来源规则**：CORE、ADAPTIVE、Router 和 Plugins 都是本文件内部的运行层或可再生摘录，不是并行版本；任何语义冲突以本文件为准。
 >
 > **公开日期**：2026-08-14
 >
-> **许可**：保留全部权利，详见仓库根目录 LICENSE。
+> **许可**：CC BY 4.0，版权归 © 2026 muzi008 所有，详见仓库根目录 LICENSE 与 NOTICE.md。
 
 > **版本**：v3.0.1 Final  
 > **发布日期**：2026-08-13  

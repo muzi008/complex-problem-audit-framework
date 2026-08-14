@@ -1,4 +1,4 @@
-# CPAF v1.0.0 English Reference Overview
+# CPAF v1.0.1 English Reference Overview
 
 The canonical specification is the Chinese document [framework.zh-CN.md](framework.zh-CN.md), internally frozen as Complex Question Answering Framework v3.0.1 Final. This English file is a reference overview, not a controlled line-by-line translation.
 
@@ -124,7 +124,7 @@ The 2026-08-13 screening found that CORE preserved the same broad quality tier a
 
 ## 11. Conformance
 
-An implementation may claim CPAF v1.0.0 compatibility when:
+An implementation may claim CPAF v1.0.x compatibility when:
 
 - CORE owns the default path;
 - Adaptive is entered only for a named gap;

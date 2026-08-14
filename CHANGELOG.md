@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.1] - 2026-08-14
+
+License-only patch. Framework behavior and the v3.0.1 Final specification are unchanged.
+
+### Changed
+
+- Replaced the all-rights-reserved notice with Creative Commons Attribution 4.0 International.
+- Permitted copying, use, modification, redistribution, and commercial use under the attribution terms.
+- Added a notice covering recommended attribution, change marking, official-project identity, generated outputs, and the warranty boundary.
+- Updated public version references from v1.0.0 to v1.0.1.
+
 ## [1.0.0] - 2026-08-14
 
 First formal public release.

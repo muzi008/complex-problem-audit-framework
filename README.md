@@ -4,10 +4,10 @@
 
 > An adaptive rule set for answering and auditing complex questions. A compact CORE answers first. Extra analysis is activated only when it can repair a named gap in evidence, variables, competing explanations, discriminating tests, or action boundaries.
 
-- **Public release:** v1.0.0
+- **Public release:** v1.0.1
 - **Canonical specification:** Complex Question Answering Framework v3.0.1 Final
 - **Release date:** 2026-08-14
-- **Status:** First stable public interface; evidence remains limited
+- **Status:** Formal public release under CC BY 4.0; evidence remains limited
 
 ## The problem
 
@@ -15,7 +15,7 @@ Complex answers can fail by omission: weak evidence, mixed fact and value claims
 
 They can also fail by accumulation. Internal checklists, route logs, confidence percentages, and method names spill into the answer without changing the decision.
 
-CPAF v1.0.0 starts from one presumption:
+CPAF v1.0.1 starts from one presumption:
 
 > CORE is sufficient until an additional step can state what would be lost without it.
 
@@ -30,6 +30,7 @@ Analysis stops when more work would not change the conclusion, evidence requirem
 - [v1.0.0 blind evaluation report, Chinese](reports/v1.0-blind-evaluation.zh-CN.md)
 - [Migration from the public preview](MIGRATION.md)
 - [Changelog](CHANGELOG.md)
+- [Copyright, attribution, and official-status notice](NOTICE.md)
 
 ## One canonical specification
 
@@ -74,8 +75,9 @@ The blind review found no systematic quality loss matching the reduction in visi
 | Name | Role |
 |---|---|
 | CPAF v0.1.0-beta | Preserved public preview |
-| CPAF v1.0.0 | Current public release |
-| Framework v3.0.1 Final | Canonical internal specification used by v1.0.0 |
+| CPAF v1.0.0 | First formal public release, preserved with its original license record |
+| CPAF v1.0.1 | Current public release; same framework behavior, now under CC BY 4.0 |
+| Framework v3.0.1 Final | Canonical internal specification used by v1.0.1 |
 
 ## Limitations
 
@@ -86,7 +88,9 @@ The blind review found no systematic quality loss matching the reduction in visi
 
 ## License
 
-This repository does not grant an open-source license. Public visibility permits inspection but does not grant permission to copy, modify, or redistribute the work. See [LICENSE](LICENSE).
+Except where otherwise noted, original content in this repository is licensed under [Creative Commons Attribution 4.0 International](LICENSE), copyright © 2026 muzi008.
+
+Anyone may copy, use, adapt, redistribute, and use the material commercially. When sharing, users must credit the creator, identify the license, link to the original project, and indicate whether changes were made. Adapted projects must not imply that they are official CPAF releases or endorsed by the creator. See [NOTICE.md](NOTICE.md) for the recommended attribution, output scope, and warranty boundary.
 
 ## Feedback
 
