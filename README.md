@@ -1,75 +1,93 @@
-# Complex Problem Audit Framework
+# Complex Problem Audit Framework (CPAF)
 
 **English** | [简体中文](README.zh-CN.md)
 
-> A value-aware, context-sensitive framework for auditing complex questions through scope, evidence, decision weights, counterarguments, uncertainty, incentives, constraints, and human agency.
+> An adaptive rule set for answering and auditing complex questions. A compact CORE answers first. Extra analysis is activated only when it can repair a named gap in evidence, variables, competing explanations, discriminating tests, or action boundaries.
 
-**Version:** `v0.1.0-beta`  
-**Status:** Experimental  
-**Format:** Model-agnostic protocol for humans, AI systems, and human-AI collaboration
+- **Public release:** v1.0.0
+- **Canonical specification:** Complex Question Answering Framework v3.0.1 Final
+- **Release date:** 2026-08-14
+- **Status:** First stable public interface; evidence remains limited
 
-## Why this project exists
+## The problem
 
-Complex answers often fail for reasons that more information cannot fix:
+Complex answers can fail by omission: weak evidence, mixed fact and value claims, no serious competing explanation, or advice that ignores risk and execution.
 
-- important evidence may be unreliable;
-- reliable evidence may not determine the decision;
-- facts, inferences, forecasts, and values may be mixed together;
-- one stakeholder's priorities may be presented as neutral truth;
-- an ideal recommendation may be impossible under real constraints;
-- an answer may list many perspectives without stating what would falsify its conclusion.
+They can also fail by accumulation. Internal checklists, route logs, confidence percentages, and method names spill into the answer without changing the decision.
 
-This framework separates those tasks so that a conclusion can be inspected, challenged, updated, and reused.
+CPAF v1.0.0 starts from one presumption:
 
-## Core idea
+> CORE is sufficient until an additional step can state what would be lost without it.
 
-```text
-SQ -> DF -> ST -> WA -> EV -> CT -> UN -> AC -> AU -> CN
-```
-
-1. Lock the scope and calibrate definitions.
-2. Map stakeholders and their value priorities.
-3. Select the Highest-Weight Anchor.
-4. Separate importance from evidence confidence.
-5. test the strongest counterargument and falsification conditions.
-6. map uncertainty, risk, incentives, and blind spots.
-7. adapt action to resources, reversibility, and execution barriers.
-8. state the conclusion, limits, confidence, and update signals.
-
-The sequence is dynamically routed. A simple question should not trigger a full audit.
+Analysis stops when more work would not change the conclusion, evidence requirement, or action ranking.
 
 ## Start here
 
-- [Full framework in English](docs/framework.en.md)
-- [完整中文框架](docs/framework.zh-CN.md)
-- [English AI prompt](prompts/cpaf.en.md)
-- [中文 AI 提示词](prompts/cpaf.zh-CN.md)
+- [Canonical Chinese specification](docs/framework.zh-CN.md)
+- [Chinese runtime prompt](prompts/cpaf.zh-CN.md)
+- [English reference overview](docs/framework.en.md)
+- [English runtime prompt](prompts/cpaf.en.md)
+- [v1.0.0 blind evaluation report, Chinese](reports/v1.0-blind-evaluation.zh-CN.md)
+- [Migration from the public preview](MIGRATION.md)
+- [Changelog](CHANGELOG.md)
 
-## Scope and value statement
+## One canonical specification
 
-The framework originated in a Chinese-language personal practice shaped by the constraints faced by ordinary people in China. It is not culturally neutral and does not claim to represent every nation, ethnicity, religion, political system, or moral tradition.
+Only [docs/framework.zh-CN.md](docs/framework.zh-CN.md) is authoritative.
 
-Its evidence and falsification procedures are intended to be auditable. Its attention to agency, resource constraints, dominant narratives, power, interests, and blind spots reflects declared design choices.
+CORE-3.0.1, ADAPTIVE-3.0.1, the Router, and Plugins are runtime layers inside that specification, not separate versions. Files under prompts/ are reproducible runtime extracts.
 
-Users may adapt value weights to their legal, cultural, religious, and personal contexts. They should not change the definitions, stable IDs, or audit rules and still describe the result as the same version.
+The 2,600-line specification is for reading, maintenance, audits, and evaluation. Ordinary questions should load the compact CORE first and enter Adaptive only after a concrete gap is found.
 
-## Semantic stability
+## What changed since v0.1.0-beta
 
-The Chinese framework is the semantic source. The English edition is a controlled translation, not a separate framework. Stable `CPAF-*` module IDs, definitions, required behavior, and prohibited interpretations govern compatibility across languages and AI systems.
+The public preview, released on 2026-07-17, described a broad audit sequence. It remains available through Git history and its release tag.
 
-Different models may use different wording or reach different conclusions. Conformance means that they use the same concepts, required fields, evidence flags, and quality gates. It does not mean that every answer must be identical.
+v1.0.0 changes the runtime contract:
+
+- CORE answers by default;
+- Adaptive repairs named gaps rather than running in parallel;
+- zero plugins is valid, and every plugin must promise an observable addition;
+- tools and free search are activated by evidence duties;
+- audit controls stay internal by default;
+- card deletion, stopping, and graceful failure rules are explicit;
+- evaluation and version governance are part of the specification.
+
+This is an incompatible public major release. See [MIGRATION.md](MIGRATION.md).
+
+## Evidence so far
+
+An internal same-batch blind screening on 2026-08-13 produced 50 anonymous answers across 10 questions and five conditions. All 50 completed; answer failures and context-isolation failures were both zero.
+
+| Condition | Mean visible characters | Relative to v2 FULL |
+|---|---:|---:|
+| Bare model | 2,076 | 71% |
+| v2.7.2.1 FULL | 2,906 | 100% |
+| v3 CORE | 1,852 | 64% |
+| v3 CORE + human-selected cards | 1,976 | 68% |
+| v3 Adaptive Router | 1,905 | 66% |
+
+The blind review found no systematic quality loss matching the reduction in visible length. This does not establish superiority over a bare model, repeated-run stability, or an independent benefit from tools or free search. The model was declared in the UI as gpt-5.6-sol / high but could not be verified programmatically, and a runtime model-catalog change was reported. See the [Chinese report](reports/v1.0-blind-evaluation.zh-CN.md).
+
+## Version mapping
+
+| Name | Role |
+|---|---|
+| CPAF v0.1.0-beta | Preserved public preview |
+| CPAF v1.0.0 | Current public release |
+| Framework v3.0.1 Final | Canonical internal specification used by v1.0.0 |
 
 ## Limitations
 
-- The Beta is based on long-term personal practice and human-AI collaboration, not large-scale controlled trials.
-- It improves auditability but cannot guarantee a correct conclusion.
-- It cannot replace missing evidence, field research, experiments, professional judgment, or the affected person's final decision.
-- High-risk medical, legal, financial, and safety decisions require qualified local professionals.
+- The framework can improve reasoning discipline and auditability; it cannot create missing evidence or guarantee a correct conclusion.
+- Current evidence is a small internal screening with one generation per question-condition pair.
+- Medical, legal, financial, and safety decisions still require qualified local professionals.
+- The Chinese specification is canonical. The English document is a reference overview, not a controlled line-by-line translation.
 
-## License status
+## License
 
-No open-source license has been selected for this Beta. Public visibility does not grant permission to copy, modify, or redistribute the work. All rights are reserved until a `LICENSE` file states otherwise.
+This repository does not grant an open-source license. Public visibility permits inspection but does not grant permission to copy, modify, or redistribute the work. See [LICENSE](LICENSE).
 
-## Origin
+## Feedback
 
-This public Beta is derived from the author's private *Complex Question Answering Framework v2.6.1*. The private source remains separate and unchanged.
+Reproducible failure cases, counterexamples, and evaluation designs are welcome. A proposed rule should identify an observed failure and a regression test, not merely sound useful.
