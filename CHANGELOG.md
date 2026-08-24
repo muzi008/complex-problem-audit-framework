@@ -1,5 +1,31 @@
 # Changelog
 
+## [1.1.0] - 2026-08-24
+
+Behavioral minor release using the v3.1.1 Final specification.
+
+### Added
+
+- Conditional observer-bias audit for high self-relevance, preferred conclusions, major sunk costs, public commitments, and hard-to-reverse actions.
+- Symmetric evidence-threshold check, one-sided search check, and explicit model-lowering observations.
+- Four rule-admission gates: semantic coverage, trigger coverage, behavioral effectiveness, and positive net benefit.
+- Baseline SHA-256 requirements for candidates, diffs, and formal upgrades.
+- Public v1.1 targeted evaluation report and auditable case, answer, and blind-judgment files.
+
+### Changed
+
+- Canonical Chinese specification updated from v3.0.1 Final to v3.1.1 Final.
+- Runtime prompts updated to CORE-3.1.1 and ADAPTIVE-3.1.1.
+- Claim-transition and outcome-mechanism checks remain evaluation cases because targeted screening found no independent runtime benefit over CORE.
+- First-stage evaluation counts are stated precisely as nine questions, 18 answers, and nine blind pairs.
+
+### Evidence boundary
+
+- The observer patch scored three wins, three ties, and zero baseline wins on target comparisons across two stages; all three control comparisons tied.
+- A separate exact-runtime release gate produced three v1.1 wins, one v1.0.1 win, and two ties on observer target comparisons; all three observer controls tied and no hard failures occurred.
+- The single baseline-winning pair is retained publicly. The release rule was revised after this mixed result to judge aggregate repetitions, repeated same-class regressions, control pollution, and hard failures rather than treating one pairwise loss as an automatic veto.
+- Results remain small-scale internal evidence under fixed model and prompt conditions, not independent cross-model validation.
+
 ## [1.0.1] - 2026-08-14
 
 License-only patch. Framework behavior and the v3.0.1 Final specification are unchanged.

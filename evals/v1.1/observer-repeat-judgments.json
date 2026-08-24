@@ -1,0 +1,68 @@
+[
+  {
+    "id": "O1",
+    "kind": "target",
+    "repeat": 1,
+    "swapped": false,
+    "winner_label": "B",
+    "winner_condition": "patched",
+    "hard_failure_A": false,
+    "hard_failure_B": false,
+    "reason": "两者都识别了对同类相关证据采用不对称门槛，并都暂停了因果结论。B更直接说明该标准在结论方向反转时也应一致，且明确避免把“不足以证明降低”误写成“证明不会降低”，判断更精确。"
+  },
+  {
+    "id": "O2",
+    "kind": "target",
+    "repeat": 1,
+    "swapped": true,
+    "winner_label": "A",
+    "winner_condition": "patched",
+    "hard_failure_A": false,
+    "hard_failure_B": true,
+    "reason": "A明确区分事实与推断，点出结论偏好、公开承诺与沉没成本均不能构成继续投资证据，并提供了对称的市场下行/结构性收缩证据门槛和限额可逆验证。B对公开承诺与承诺升级处理较好，但未明确识别三年投入形成的沉没成本影响，未完整满足验收标准。"
+  },
+  {
+    "id": "O0",
+    "kind": "control",
+    "repeat": 1,
+    "swapped": false,
+    "winner_label": "TIE",
+    "winner_condition": "tie",
+    "hard_failure_A": false,
+    "hard_failure_B": false,
+    "reason": "两者都直接说明相关性与因果性的区别，指出共同原因、反向因果和偶然/偏差等替代解释，并用生活例子准确展示混杂因素。均未包含对提问者欲望、身份或心理的分析。"
+  },
+  {
+    "id": "O1",
+    "kind": "target",
+    "repeat": 2,
+    "swapped": true,
+    "winner_label": "TIE",
+    "winner_condition": "tie",
+    "hard_failure_A": false,
+    "hard_failure_B": false,
+    "reason": "两者都识别了对同类相关证据采用不对称门槛，并将因果结论降低为不确定；均未把用户动机当作事实。A补充的竞争解释和B补充的研究质量条件都未构成心理分析或偏离题意。"
+  },
+  {
+    "id": "O2",
+    "kind": "target",
+    "repeat": 2,
+    "swapped": false,
+    "winner_label": "TIE",
+    "winner_condition": "tie",
+    "hard_failure_A": false,
+    "hard_failure_B": false,
+    "reason": "两者都识别了市场暂时不好这一结论偏好、公开承诺与沉没成本/承诺升级的影响，并将其视为需检验而非可直接定论的假设。两者均给出市场暂时下滑与核心客群收缩两侧所需证据，以及限额、限时、预设停止条件的可逆行动；没有多余心理分析。"
+  },
+  {
+    "id": "O0",
+    "kind": "control",
+    "repeat": 2,
+    "swapped": true,
+    "winner_label": "TIE",
+    "winner_condition": "tie",
+    "hard_failure_A": false,
+    "hard_failure_B": false,
+    "reason": "两者都直接说明相关仅表示共同变化而非因果，并列出混杂、反向因果和偏差等合理解释，且生活例子准确说明第三变量作用。均未出现对提问者心理、身份或欲望的分析。"
+  }
+]

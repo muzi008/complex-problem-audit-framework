@@ -1,0 +1,2 @@
+# Preserve verbatim model-output Markdown, including hard-break spaces.
+evals/v1.1/**/*.md whitespace=-trailing-space
