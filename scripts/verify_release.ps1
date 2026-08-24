@@ -12,6 +12,11 @@ function Read-Utf8 {
     return Get-Content -LiteralPath $Path -Raw -Encoding UTF8
 }
 
+function Normalize-Newlines {
+    param([string]$Text)
+    return $Text -replace "`r`n?", "`n"
+}
+
 $zhSpec = Read-Utf8 (Join-Path $RepoRoot 'docs/framework.zh-CN.md')
 $zhPrompt = Read-Utf8 (Join-Path $RepoRoot 'prompts/cpaf.zh-CN.md')
 $enPrompt = Read-Utf8 (Join-Path $RepoRoot 'prompts/cpaf.en.md')
@@ -61,15 +66,15 @@ Assert-Release (@($releaseJudgments | Where-Object { $_.hard_failure_A -or $_.ha
 
 foreach ($row in $initialGenerations) {
     $path = Join-Path $RepoRoot "evals/v1.1/outputs/$($row.id)_$($row.condition).md"
-    Assert-Release ((Read-Utf8 $path).Trim() -eq $row.content.Trim()) "Output mismatch: $path"
+    Assert-Release ((Normalize-Newlines (Read-Utf8 $path)).Trim() -eq (Normalize-Newlines $row.content).Trim()) "Output mismatch: $path"
 }
 foreach ($row in $repeatGenerations) {
     $path = Join-Path $RepoRoot "evals/v1.1/observer-repeat-outputs/$($row.id)_r$($row.repeat)_$($row.condition).md"
-    Assert-Release ((Read-Utf8 $path).Trim() -eq $row.content.Trim()) "Output mismatch: $path"
+    Assert-Release ((Normalize-Newlines (Read-Utf8 $path)).Trim() -eq (Normalize-Newlines $row.content).Trim()) "Output mismatch: $path"
 }
 foreach ($row in $releaseGenerations) {
     $path = Join-Path $RepoRoot "evals/v1.1/release-gate/outputs/$($row.id)_r$($row.repeat)_$($row.condition).md"
-    Assert-Release ((Read-Utf8 $path).Trim() -eq $row.content.Trim()) "Output mismatch: $path"
+    Assert-Release ((Normalize-Newlines (Read-Utf8 $path)).Trim() -eq (Normalize-Newlines $row.content).Trim()) "Output mismatch: $path"
 }
 
 $paths = git -C $RepoRoot ls-files --cached --others --exclude-standard
