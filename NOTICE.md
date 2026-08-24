@@ -4,7 +4,7 @@
 
 Copyright © 2026 muzi008.
 
-Except where otherwise noted, original content in CPAF v1.0.1 is licensed under the Creative Commons Attribution 4.0 International Public License:
+Except where otherwise noted, original content in CPAF v1.1.0 is licensed under the Creative Commons Attribution 4.0 International Public License:
 
 https://creativecommons.org/licenses/by/4.0/
 
@@ -39,7 +39,7 @@ https://github.com/muzi008/complex-problem-audit-framework
 
 The license does not permit anyone to state or imply that an adapted project is an official CPAF release, is connected with the creator, or is sponsored or endorsed by the creator. Patent and trademark rights are not licensed by CC BY 4.0.
 
-Descriptive statements such as "adapted from CPAF" or "compatible with CPAF v1.0.x" are welcome when accurate and accompanied by attribution and a change notice.
+Descriptive statements such as "adapted from CPAF" or "compatible with CPAF v1.1.x" are welcome when accurate and accompanied by attribution and a change notice.
 
 ## Outputs produced with the framework
 

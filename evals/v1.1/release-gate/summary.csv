@@ -1,0 +1,7 @@
+"patch","kind","release_wins","baseline_wins","ties","parse_errors","hard_failures"
+"claim","control","0","0","1","0","0"
+"claim","target","1","0","1","0","0"
+"observer","control","0","0","3","0","0"
+"observer","target","3","1","2","0","0"
+"outcome","control","1","0","0","0","0"
+"outcome","target","0","0","2","0","0"

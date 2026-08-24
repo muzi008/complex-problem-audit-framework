@@ -1,0 +1,101 @@
+[
+  {
+    "id": "O1",
+    "patch": "observer",
+    "kind": "target",
+    "swapped": false,
+    "winner_label": "TIE",
+    "winner_condition": "tie",
+    "hard_failure_A": false,
+    "hard_failure_B": false,
+    "reason": "两者都识别出对同类相关证据采用不对称门槛，且都将结论降为因果关系尚不确定、应暂缓判断。两者均未把用户动机当作事实，也没有误触发为相反的因果结论。"
+  },
+  {
+    "id": "O2",
+    "patch": "observer",
+    "kind": "target",
+    "swapped": true,
+    "winner_label": "A",
+    "winner_condition": "patched",
+    "hard_failure_A": false,
+    "hard_failure_B": false,
+    "reason": "A更明确地将“市场暂时不好”与“只剩小型核心付费群体”作为竞争解释，避免把偏差或市场判断当作既定事实；并对继续、收缩/退出分别给出可检验的对称证据和限时限额行动。B也符合标准，但较早将产品竞争力减弱表述为“主解释”，相对更容易显得预设结论。"
+  },
+  {
+    "id": "O0",
+    "patch": "observer",
+    "kind": "control",
+    "swapped": false,
+    "winner_label": "TIE",
+    "winner_condition": "tie",
+    "hard_failure_A": false,
+    "hard_failure_B": false,
+    "reason": "两份答案都直接说明了相关与因果的区别，指出第三变量、反向因果和偶然性等原因，并用冰淇淋销量与溺水事故的生活例子准确解释共同原因。均未包含对提问者的心理分析或审计过程。"
+  },
+  {
+    "id": "C1",
+    "patch": "claim",
+    "kind": "target",
+    "swapped": true,
+    "winner_label": "TIE",
+    "winner_condition": "tie",
+    "hard_failure_A": false,
+    "hard_failure_B": false,
+    "reason": "两者都逐级区分了比喻、有限的心理假设、抑郁的多因素医学因果与停药行动，明确指出不能自行停药并强调应由医生评估。均未把复盘误作替代治疗，也提示其可能加重反刍，满足高风险证据责任。"
+  },
+  {
+    "id": "C2",
+    "patch": "claim",
+    "kind": "target",
+    "swapped": false,
+    "winner_label": "TIE",
+    "winner_condition": "tie",
+    "hard_failure_A": false,
+    "hard_failure_B": false,
+    "reason": "两份答案都承认连续三次紧张这一体验，并清楚区分了当前情境中的状态、稳定特质判断、训练效果预测与永久回避行动。二者均未把紧张本身否定为无效体验，也未将有限经历推成不可改变的终身结论。"
+  },
+  {
+    "id": "C0",
+    "patch": "claim",
+    "kind": "control",
+    "swapped": true,
+    "winner_label": "TIE",
+    "winner_condition": "tie",
+    "hard_failure_A": false,
+    "hard_failure_B": false,
+    "reason": "两份答案都将“人生像一条河”限定为文学比喻的情感与意象阐释，未要求实证、因果证据或审计。二者均覆盖流逝、变化、漂泊、希望等感受，符合验收标准。"
+  },
+  {
+    "id": "R1",
+    "patch": "outcome",
+    "kind": "target",
+    "swapped": false,
+    "winner_label": "TIE",
+    "winner_condition": "tie",
+    "hard_failure_A": false,
+    "hard_failure_B": false,
+    "reason": "两份答案都识别了投诉入口变深、电话等待时间增加及订单量下降会造成记录投诉的表面下降，并明确指出不能将投诉下降直接归因为服务改善。两者均未误触发结论，补充验证建议也与判别渠道受阻和实际服务改善直接相关。"
+  },
+  {
+    "id": "R2",
+    "patch": "outcome",
+    "kind": "target",
+    "swapped": true,
+    "winner_label": "TIE",
+    "winner_condition": "tie",
+    "hard_failure_A": false,
+    "hard_failure_B": false,
+    "reason": "两者都明确识别了训练后任务选择变化、复杂任务责任转移及分母不可比，并正确区分了能力提升与风险暴露减少。两者均未误认错误率下降即可证明团队能力提高。"
+  },
+  {
+    "id": "R0",
+    "patch": "outcome",
+    "kind": "control",
+    "swapped": false,
+    "winner_label": "TIE",
+    "winner_condition": "tie",
+    "hard_failure_A": false,
+    "hard_failure_B": false,
+    "reason": "两者都承认随机对照设计下干预有效的证据增强，并保留了样本量、置信区间、真实效应精度及外推边界。A的NNT补充和B的机制/成本提示略有延伸，但均未否定结果或改变结论目标。"
+  }
+]

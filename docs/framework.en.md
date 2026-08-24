@@ -1,6 +1,6 @@
-# CPAF v1.0.1 English Reference Overview
+# CPAF v1.1.0 English Reference Overview
 
-The canonical specification is the Chinese document [framework.zh-CN.md](framework.zh-CN.md), internally frozen as Complex Question Answering Framework v3.0.1 Final. This English file is a reference overview, not a controlled line-by-line translation.
+The canonical specification is the Chinese document [framework.zh-CN.md](framework.zh-CN.md), internally released as Complex Question Answering Framework v3.1.1 Final. This English file is a reference overview, not a controlled line-by-line translation.
 
 ## 1. Purpose
 
@@ -37,6 +37,16 @@ CORE requires an answer to:
 7. use tools when external evidence can change the answer;
 8. adapt action to resources, risk, reversibility, execution barriers, and agency;
 9. stop when further work has no marginal decision value.
+
+### Conditional observer-bias audit
+
+When a question is strongly tied to identity, a preferred conclusion, major sunk costs, public commitment, or a hard-to-reverse action, CORE conditionally checks:
+
+- whether reversing the preferred conclusion would change the evidence threshold, source requirement, or stopping rule;
+- whether search, sampling, or interpretation is one-sided;
+- which external observation, reverse search, or out-of-sample result would lower the current model.
+
+Bias is treated as a hypothesis to test, not as a fact about the user's hidden motives. The audit covers user framing, model agreeableness, retrieval choices, mechanical framework compliance, evaluation targets, and path dependence. It stays invisible when it changes no conclusion, evidence boundary, or action.
 
 ## 4. Adaptive entry rule
 
@@ -120,11 +130,17 @@ When tools fail or evidence is unavailable, state what is known, what remains un
 
 Evaluation starts with hard failures and anonymous pairwise review, not a single composite score. Relevant dimensions include question representation, factual correctness, novelty relative to the user, mechanism, model discrimination, evidence quality, decision value, expression cost, stopping behavior, tool closure, and Adaptive's added outcome relative to CORE.
 
-The 2026-08-13 screening found that CORE preserved the same broad quality tier at about 64% of the visible character count of v2 FULL. It did not establish that CPAF beats a bare model or that Adaptive, tools, and free search each have independent benefits. See the [public report](../reports/v1.0-blind-evaluation.zh-CN.md).
+The 2026-08-13 screening found that CORE preserved the same broad quality tier at about 64% of the visible character count of v2 FULL. It did not establish that CPAF beats a bare model or that Adaptive, tools, and free search each have independent benefits. See the [v1.0 report](../reports/v1.0-blind-evaluation.zh-CN.md).
+
+A 2026-08-24 targeted screening compared three candidate patches against CORE. Nine questions produced 18 first-stage answers and nine blind pairs. Only the observer-bias patch showed an incremental signal. Two further repetitions produced 12 answers and six blind pairs. Across both stages, observer target cases scored three patch wins, three ties, and zero baseline wins; all three control comparisons tied. Claim-transition and outcome-mechanism patches each tied all three first-stage comparisons, so they remain evaluation cases rather than runtime instructions. See the [v1.1 report](../reports/v1.1-observer-patch-evaluation.zh-CN.md).
+
+The exact public runtime prompts then received a separate release gate with 30 fresh answers and 15 blind pairs. Observer target cases scored three v1.1 wins, one v1.0.1 win, and two ties; all observer controls tied, and no hard failure occurred. The baseline-winning pair remains in the public data. Its advantage did not repeat in the other two runs of the same case.
+
+Candidate capabilities must pass four gates: semantic coverage, trigger coverage, behavioral effectiveness, and positive net benefit. A same-named file is not accepted as the same baseline without a matching SHA-256.
 
 ## 11. Conformance
 
-An implementation may claim CPAF v1.0.x compatibility when:
+An implementation may claim CPAF v1.1.x compatibility when:
 
 - CORE owns the default path;
 - Adaptive is entered only for a named gap;
@@ -133,6 +149,7 @@ An implementation may claim CPAF v1.0.x compatibility when:
 - internal controls stay hidden by default;
 - analysis stops at zero marginal decision value;
 - high-risk answers preserve verification and responsibility boundaries.
+- the observer-bias audit remains conditional and does not infer hidden motives as facts.
 
 The Chinese specification controls when this overview is incomplete or ambiguous.
 
